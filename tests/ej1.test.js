@@ -15,3 +15,9 @@ test("Cuántas hay encendidas después de prender un cuadrado de 2x2",()=>{
     letrero.encender([0,0],[1,1]);
     expect(letrero.cantPrendidas()).toBe(4);
 });
+
+test("Cuántas hay encendidas después de prender una columna de 1x3",()=>{
+    var letrero = new Letrero();
+    letrero.encender([0,0],[2,0]);
+    expect(letrero.cantPrendidas()).toBe(3);
+});
