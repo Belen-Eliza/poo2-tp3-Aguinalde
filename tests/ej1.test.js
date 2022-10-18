@@ -21,3 +21,9 @@ test("Cuántas hay encendidas después de prender una columna de 1x3",()=>{
     letrero.encender([0,0],[2,0]);
     expect(letrero.cantPrendidas()).toBe(3);
 });
+
+test("Cuántas hay encendidas después de prender una fila de 5x1",()=>{
+    var letrero = new Letrero();
+    letrero.encender([0,0],[0,4]);
+    expect(letrero.cantPrendidas()).toBe(5);
+});
