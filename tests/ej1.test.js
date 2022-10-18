@@ -34,3 +34,10 @@ test("Cuántas hay encendidas después de prender una y luego otra",()=>{
     letrero.encender([1,0],[1,0]);
     expect(letrero.cantPrendidas()).toBe(2);
 });
+
+test("Cuántas hay encendidas después de prender una dos veces",()=>{
+    var letrero = new Letrero();
+    letrero.encender([0,0],[0,0]);
+    letrero.encender([0,0],[0,0]);
+    expect(letrero.cantPrendidas()).toBe(1);
+});
