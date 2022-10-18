@@ -39,6 +39,9 @@ function Letrero(){
             }
         }
     }
+    this.cambiar = (esquinaSI, esquinaID) =>{
+        return true;
+    }
 }
 
 module.exports = Letrero;
