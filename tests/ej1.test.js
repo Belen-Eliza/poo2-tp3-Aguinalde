@@ -27,3 +27,10 @@ test("Cuántas hay encendidas después de prender una fila de 5x1",()=>{
     letrero.encender([0,0],[0,4]);
     expect(letrero.cantPrendidas()).toBe(5);
 });
+
+test("Cuántas hay encendidas después de prender una y luego otra",()=>{
+    var letrero = new Letrero();
+    letrero.encender([0,0],[0,0]);
+    letrero.encender([1,0],[1,0]);
+    expect(letrero.cantPrendidas()).toBe(2);
+});
