@@ -42,7 +42,12 @@ function Letrero(){
     this.cambiar = (esquinaSI, esquinaID) =>{
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
-                this.luces[f][c].prender();
+                if (this.luces[f][c].prendida) {
+                    this.luces[f][c].apagar();
+                } else {
+                    this.luces[f][c].prender();
+                }
+                
             }
         }
     }
