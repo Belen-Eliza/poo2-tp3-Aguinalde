@@ -61,3 +61,11 @@ test("Cambiar el estado de una luz que estaba prendida",()=>{
     letrero.cambiar([0,0],[0,0]);
     expect(letrero.luces[0][0].prendida).toBe(false);
 });
+
+test("Cambiar el estado de un cuadrado con luces prendidas y apagadas",()=>{
+    var letrero = new Letrero();
+    letrero.encender([0,0],[0,1]);
+    letrero.cambiar([0,0],[1,1]);
+    resultado =[letrero.luces[0][0].prendida,letrero.luces[0][1].prendida,letrero.luces[1][0].prendida,letrero.luces[1][1].prendida];
+    expect(resultado).toBe([false,false,true,true]);
+});
