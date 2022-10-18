@@ -1,12 +1,38 @@
+const Lampara = require("./Lampara");
+
+function crearCuadricula(cantfilas,cantcolumnas){
+    let grilla= new Array(cantfilas);
+    for (f=0;f<cantfilas;f++){
+        let fila=new Array(cantcolumnas);
+        for (c=0;c<cantcolumnas;c++){
+            fila[c]=new Lampara();
+        }
+        grilla[f]=fila;
+    }
+    return grilla;
+}
+
 function Letrero(){
-    this.encendidas=0;
+    this.luces=crearCuadricula(100,100);
     this.cantPrendidas= ()=>{
-        return this.encendidas;
+        let encendidas=0;
+        this.luces.forEach(fila =>{
+            fila.forEach(lampara=>{
+                if (lampara.prendida){
+                    encendidas++;
+                }
+            })
+        });
+        return encendidas;
     }
     this.encender = (esquinaSI, esquinaID)=>{
-        var cant=(esquinaID[0]-esquinaSI[0]+1)*(esquinaID[1]-esquinaSI[1]+1);
-        this.encendidas+= cant;
+        for (f=esquinaSI[0];f<=esquinaID[0];f++){
+            for (c=esquinaSI[1];c<=esquinaID[1];c++){
+                this.luces[f][c].prender();
+            }
+        }
     }
+    
 }
 
 module.exports = Letrero;
