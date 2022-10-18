@@ -48,3 +48,9 @@ test("Cuántas hay encendidas después de prender una y apagarla",()=>{
     letrero.apagar([0,0],[0,0]);
     expect(letrero.cantPrendidas()).toBe(0);
 });
+
+test("Cambiar el estado de una luz",()=>{
+    var letrero = new Letrero();
+    letrero.cambiar([0,0],[0,0]);
+    expect(letrero.luces[0][0].prendida).toBe(true);
+});
