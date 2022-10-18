@@ -32,7 +32,13 @@ function Letrero(){
             }
         }
     }
-    
+    this.apagar = (esquinaSI, esquinaID)=>{
+        for (f=esquinaSI[0];f<=esquinaID[0];f++){
+            for (c=esquinaSI[1];c<=esquinaID[1];c++){
+                this.luces[f][c].apagar();
+            }
+        }
+    }
 }
 
 module.exports = Letrero;
