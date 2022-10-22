@@ -1,6 +1,7 @@
 const Lampara = require("./Lampara");
 
 function crearCuadricula(cantfilas,cantcolumnas){
+    //verificar cantidad
     let grilla= new Array(cantfilas);
     for (f=0;f<cantfilas;f++){
         let fila=new Array(cantcolumnas);
@@ -26,6 +27,7 @@ function Letrero(){
         return encendidas;
     }
     this.encender = (esquinaSI, esquinaID)=>{
+        //validar cuadrado
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].prender();
@@ -33,6 +35,7 @@ function Letrero(){
         }
     }
     this.apagar = (esquinaSI, esquinaID)=>{
+        //validar cuadrado
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].apagar();
@@ -40,6 +43,7 @@ function Letrero(){
         }
     }
     this.cambiar = (esquinaSI, esquinaID) =>{
+        //validar cuadrado
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].cambiar();
