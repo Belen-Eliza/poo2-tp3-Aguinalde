@@ -15,7 +15,7 @@ function crearCuadricula(cantfilas,cantcolumnas){
 
 function Letrero(){
     this.luces=crearCuadricula(100,100);
-    this.validarCuadrado = function (){
+    this.validarCuadrado = function (esquinaSI,esquinaID){
         let filas = esquinaID[0]-esquinaSI[0];
         let columnas=esquinaID[1]-esquinaSI[1];
         if (filas<0 || columnas<0){
