@@ -11,7 +11,11 @@ function Lampara() {
         }
     }
     this.cambiar =()=>{
-        this.intensidad+=2;
+        if (this.intensidad==9){
+            this.intensidad=10;
+        } else if(this.intensidad<9){
+            this.intensidad+=2;
+        }
     }
 }
 
