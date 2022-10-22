@@ -55,3 +55,9 @@ test("Bajar intensidad mas de 10 veces",()=>{
     }
     expect(lampara.intensidad).toBe(0);
 })
+
+test("Cambiar intensidad",()=>{
+    let lampara=new Lampara();
+    lampara.cambiar();
+    expect(lampara.intensidad).toBe(2);
+})
