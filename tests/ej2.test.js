@@ -1,5 +1,4 @@
 const Lampara = require("../code/Lampara");
-const Letrero = require("../code/Letrero");
 
 var lampara;
 beforeEach(()=>{
