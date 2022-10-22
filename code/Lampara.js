@@ -11,7 +11,7 @@ function Lampara() {
         }
     }
     this.cambiar =()=>{
-        this.intensidad=2;
+        this.intensidad+=2;
     }
 }
 
