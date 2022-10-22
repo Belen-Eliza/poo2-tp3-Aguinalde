@@ -6,7 +6,7 @@ function Lampara() {
         }
     }
     this.apagar= ()=>{
-        this.intensidad=0;
+        this.intensidad--;
     }
     this.cambiar =()=>{
         //this.prendida = !this.prendida;
