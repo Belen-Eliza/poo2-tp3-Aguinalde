@@ -16,7 +16,11 @@ function crearCuadricula(cantfilas,cantcolumnas){
 function Letrero(){
     this.luces=crearCuadricula(100,100);
     this.validarCuadrado = function (){
-        throw new Error("Cuadrado invalido");
+        let filas = esquinaID[0]-esquinaSI[0];
+        let columnas=esquinaID[1]-esquinaSI[1];
+        if (filas<0 || columnas<0){
+            throw new Error("Cuadrado invalido");
+        }
     }
     this.cantPrendidas= ()=>{
         let encendidas=0;
