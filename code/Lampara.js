@@ -1,5 +1,6 @@
 function Lampara() {
     this.prendida =false;
+    this.intensidad=0;
     this.prender=()=>{
         this.prendida=true;
     }
