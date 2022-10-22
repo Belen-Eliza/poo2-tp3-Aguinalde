@@ -1,5 +1,6 @@
 const Letrero = require("../code/Letrero");
 const {Cuadrado,validarCuadrado}=require("../code/Cuadrado");
+const CuadradoInvalidoException = require("../code/CuadradoInvalidoException");
 beforeEach(()=>{
     letrero = new Letrero();
 })
@@ -56,9 +57,9 @@ test("Cuántas hay encendidas después de prender una y apagarla",()=>{
 });
 
 test("Validar cuadrado",()=>{
-    expect(()=>{validarCuadrado([1,1],[0,0])}).toThrow(new Error("Cuadrado invalido"));
+    expect(()=>{validarCuadrado([1,1],[0,0])}).toThrow(new CuadradoInvalidoException());
 });
 
 test("Validar cuadrado valido",()=>{
-    expect(()=>{validarCuadrado([0,0],[1,1])}).not.toThrow(new Error("Cuadrado invalido"));
+    expect(()=>{validarCuadrado([0,0],[1,1])}).not.toThrow(new CuadradoInvalidoException());
 });
