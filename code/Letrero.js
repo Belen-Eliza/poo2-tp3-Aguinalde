@@ -1,10 +1,5 @@
 const Lampara = require("./Lampara");
 
-//Refactor 1: Preserve whole object -> cuadrado
-//Refactor 2: Move method -> validar cuadrado
-//Refactor 3: Replace Error Code with Exception -> CuadradoInvalidoException
-
-
 function crearCuadricula(cantfilas,cantcolumnas){
     if (cantcolumnas<=0 || cantfilas<=0){
         throw new Error ("La grilla no puede tener dimensiones negativas o igual a 0.");
