@@ -15,6 +15,9 @@ function crearCuadricula(cantfilas,cantcolumnas){
 
 function Letrero(){
     this.luces=crearCuadricula(100,100);
+    this.validarCuadrado = function (){
+        throw new Error("Cuadrado invalido");
+    }
     this.cantPrendidas= ()=>{
         let encendidas=0;
         this.luces.forEach(fila =>{
