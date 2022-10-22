@@ -4,7 +4,7 @@ function Lampara() {
         this.intensidad=1;
     }
     this.apagar= ()=>{
-        //this.prendida=false;
+        this.intensidad=0;
     }
     this.cambiar =()=>{
         //this.prendida = !this.prendida;
