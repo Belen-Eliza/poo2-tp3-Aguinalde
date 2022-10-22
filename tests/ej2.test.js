@@ -1,31 +1,27 @@
 const Lampara = require("../code/Lampara");
 const Letrero = require("../code/Letrero");
 
-var letrero;
+var lampara;
 beforeEach(()=>{
-    letrero = new Letrero();
+    lampara = new Lampara();
 });
 
 test("Chequear intensidad",()=>{
-    let lampara=new Lampara();
     expect(lampara.intensidad).toBe(0);
 })
 
 test("Prender y chequear intensidad",()=>{
-    let lampara=new Lampara();
     lampara.prender();
     expect(lampara.intensidad).toBe(1);
 })
 
 test("Subir intensidad dos veces",()=>{
-    let lampara=new Lampara();
     lampara.prender();
     lampara.prender();
     expect(lampara.intensidad).toBe(2);
 })
 
-test("Subir intensidad mas de 10 veces",()=>{
-    let lampara=new Lampara();
+test("Subir intensidad mas de 10 veces",()=>{  
     for (let k=0; k<11;k++){
         lampara.prender();
     }
@@ -34,14 +30,12 @@ test("Subir intensidad mas de 10 veces",()=>{
 
 
 test("Bajar la intensidad",()=>{
-    let lampara=new Lampara();
     lampara.prender();
     lampara.apagar()
     expect(lampara.intensidad).toBe(0);
 })
 
 test("Subir intensidad dos veces y luego bajarla",()=>{
-    let lampara=new Lampara();
     lampara.prender();
     lampara.prender();
     lampara.apagar()
@@ -49,29 +43,25 @@ test("Subir intensidad dos veces y luego bajarla",()=>{
 })
 
 test("Bajar intensidad mas de 10 veces",()=>{
-    let lampara=new Lampara();
     for (let k=0; k<11;k++){
         lampara.apagar();
     }
     expect(lampara.intensidad).toBe(0);
 })
 
-test("Cambiar intensidad",()=>{
-    let lampara=new Lampara();
+test("Cambiar intensidad",()=>{  
     lampara.cambiar();
     expect(lampara.intensidad).toBe(2);
 })
 
 
 test("Cambiar intensidad dos veces",()=>{
-    let lampara=new Lampara();
     lampara.cambiar();
     lampara.cambiar();
     expect(lampara.intensidad).toBe(4);
 })
 
 test("Cambiar intensidad cuando estaba en 9",()=>{
-    let lampara=new Lampara();
     for (let k=0; k<9;k++){
         lampara.prender();
     }
