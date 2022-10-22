@@ -11,11 +11,11 @@ function Cuadrado(esquinaSI,esquinaID){
     let esquina_ID =esquinaID;
     let esquina_SI= esquinaSI;
     this.get_esquinaSI=()=>{
-        return esquina_ID;
+        return esquina_SI;
     }
 
     this.get_esquinaID = ()=>{
-        return esquina_SI;
+        return esquina_ID;
     }
 }
 module.exports={Cuadrado,validarCuadrado};
