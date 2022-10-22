@@ -34,7 +34,7 @@ function Letrero(){
         return encendidas;
     }
     this.encender = (esquinaSI, esquinaID)=>{
-        validarCuadrado(esquinaSI,esquinaID);
+        this.validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].prender();
@@ -43,7 +43,7 @@ function Letrero(){
     }
     this.apagar = (esquinaSI, esquinaID)=>{
        
-        validarCuadrado(esquinaSI,esquinaID);
+        this.validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].apagar();
@@ -52,7 +52,7 @@ function Letrero(){
     }
     this.cambiar = (esquinaSI, esquinaID) =>{
       
-        validarCuadrado(esquinaSI,esquinaID);
+        this.validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].cambiar();
