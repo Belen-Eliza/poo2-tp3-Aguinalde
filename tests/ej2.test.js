@@ -16,3 +16,10 @@ test("Prender y chequear intensidad",()=>{
     lampara.prender();
     expect(lampara.intensidad).toBe(1);
 })
+
+test("Subir intensidad dos veces",()=>{
+    let lampara=new Lampara();
+    lampara.prender();
+    lampara.prender();
+    expect(lampara.intensidad).toBe(2);
+})
