@@ -31,3 +31,11 @@ test("Subir intensidad mas de 10 veces",()=>{
     }
     expect(lampara.intensidad).toBe(10);
 })
+
+
+test("Bajar la intensidad",()=>{
+    let lampara=new Lampara();
+    lampara.prender();
+    lampara.apagar()
+    expect(lampara.intensidad).toBe(0);
+})
