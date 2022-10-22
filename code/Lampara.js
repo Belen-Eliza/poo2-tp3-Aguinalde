@@ -1,14 +1,13 @@
 function Lampara() {
-    this.prendida =false;
     this.intensidad=0;
     this.prender=()=>{
-        this.prendida=true;
+        this.intensidad=1;
     }
     this.apagar= ()=>{
-        this.prendida=false;
+        //this.prendida=false;
     }
     this.cambiar =()=>{
-        this.prendida = !this.prendida;
+        //this.prendida = !this.prendida;
     }
 }
 

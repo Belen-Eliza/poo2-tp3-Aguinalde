@@ -26,7 +26,7 @@ function Letrero(){
         let encendidas=0;
         this.luces.forEach(fila =>{
             fila.forEach(lampara=>{
-                if (lampara.prendida){
+                if (lampara.intensidad>0){
                     encendidas++;
                 }
             })
@@ -34,7 +34,7 @@ function Letrero(){
         return encendidas;
     }
     this.encender = (esquinaSI, esquinaID)=>{
-        //validar cuadrado
+        validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].prender();
@@ -42,7 +42,8 @@ function Letrero(){
         }
     }
     this.apagar = (esquinaSI, esquinaID)=>{
-        //validar cuadrado
+       
+        validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].apagar();
@@ -50,7 +51,8 @@ function Letrero(){
         }
     }
     this.cambiar = (esquinaSI, esquinaID) =>{
-        //validar cuadrado
+      
+        validarCuadrado(esquinaSI,esquinaID);
         for (f=esquinaSI[0];f<=esquinaID[0];f++){
             for (c=esquinaSI[1];c<=esquinaID[1];c++){
                 this.luces[f][c].cambiar();
