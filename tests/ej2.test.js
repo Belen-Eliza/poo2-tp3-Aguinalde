@@ -61,3 +61,11 @@ test("Cambiar intensidad",()=>{
     lampara.cambiar();
     expect(lampara.intensidad).toBe(2);
 })
+
+
+test("Cambiar intensidad dos veces",()=>{
+    let lampara=new Lampara();
+    lampara.cambiar();
+    lampara.cambiar();
+    expect(lampara.intensidad).toBe(4);
+})
