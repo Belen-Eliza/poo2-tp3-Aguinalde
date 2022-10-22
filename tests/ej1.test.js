@@ -1,6 +1,4 @@
 const Letrero = require("../code/Letrero");
-const validarCuadrado =require("../code/validar");
-var letrero;
 beforeEach(()=>{
     letrero = new Letrero();
 })
