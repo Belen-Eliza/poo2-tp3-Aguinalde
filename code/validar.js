@@ -1,4 +1,4 @@
 function validarCuadrado(){
-    new Error("Cuadrado invalido");
+    throw new Error("Cuadrado invalido");
 }
 module.exports =validarCuadrado;

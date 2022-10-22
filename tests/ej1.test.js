@@ -67,5 +67,5 @@ test("Cambiar el estado de un cuadrado con luces prendidas y apagadas",()=>{
 });
 
 test("Validar cuadrado",()=>{
-    expect(()=>{validarCuadrado([1,1],[0,0])}).toThrow(new Error("Cuadrado invalido"));
+    expect(()=>{letrero.validarCuadrado([1,1],[0,0])}).toThrow(new Error("Cuadrado invalido"));
 });
