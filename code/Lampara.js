@@ -1,7 +1,7 @@
 function Lampara() {
     this.intensidad=0;
     this.prender=()=>{
-        this.intensidad=1;
+        this.intensidad++;
     }
     this.apagar= ()=>{
         this.intensidad=0;
