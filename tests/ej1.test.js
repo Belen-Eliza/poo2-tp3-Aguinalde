@@ -1,4 +1,5 @@
 const Letrero = require("../code/Letrero");
+const {Cuadrado,validarCuadrado}=require("../code/Cuadrado");
 beforeEach(()=>{
     letrero = new Letrero();
 })
@@ -8,66 +9,56 @@ test("Cuántas hay encendidas",()=>{
 });
 
 test("Cuántas hay encendidas después de prender una",()=>{
-    letrero.encender([0,0],[0,0]);
+    let cuadrado=new Cuadrado([0,0],[0,0]);
+    letrero.encender(cuadrado);
     expect(letrero.cantPrendidas()).toBe(1);
 });
 
 test("Cuántas hay encendidas después de prender un cuadrado de 2x2",()=>{
-    letrero.encender([0,0],[1,1]);
+    let cuadrado=new Cuadrado([0,0],[1,1]);
+    letrero.encender(cuadrado);
     expect(letrero.cantPrendidas()).toBe(4);
 });
 
-test("Cuántas hay encendidas después de prender una columna de 1x3",()=>{
-    letrero.encender([0,0],[2,0]);
+test("Cuántas hay encendidas después de prender una columna de 3x1",()=>{
+    let cuadrado=new Cuadrado([0,0],[2,0]);
+    letrero.encender(cuadrado);
     expect(letrero.cantPrendidas()).toBe(3);
 });
 
-test("Cuántas hay encendidas después de prender una fila de 5x1",()=>{
-    letrero.encender([0,0],[0,4]);
+test("Cuántas hay encendidas después de prender una fila de 1x5",()=>{
+    let cuadrado=new Cuadrado([0,0],[0,4]);
+    letrero.encender(cuadrado);
     expect(letrero.cantPrendidas()).toBe(5);
 });
 
 test("Cuántas hay encendidas después de prender una y luego otra",()=>{
-    letrero.encender([0,0],[0,0]);
-    letrero.encender([1,0],[1,0]);
+    let cuadrado1=new Cuadrado([0,0],[0,0]);
+    letrero.encender(cuadrado1);
+    let cuadrado2=new Cuadrado([1,0],[1,0]);
+    letrero.encender(cuadrado2);
+   
     expect(letrero.cantPrendidas()).toBe(2);
 });
 
 test("Cuántas hay encendidas después de prender una dos veces",()=>{
-    letrero.encender([0,0],[0,0]);
-    letrero.encender([0,0],[0,0]);
+    let cuadrado=new Cuadrado([0,0],[0,0]);
+    letrero.encender(cuadrado);
+    letrero.encender(cuadrado);
     expect(letrero.cantPrendidas()).toBe(1);
 });
 
 test("Cuántas hay encendidas después de prender una y apagarla",()=>{
-    letrero.encender([0,0],[0,0]);
-    letrero.apagar([0,0],[0,0]);
+    let cuadrado=new Cuadrado([0,0],[0,0]);
+    letrero.encender(cuadrado);
+    letrero.apagar(cuadrado);
     expect(letrero.cantPrendidas()).toBe(0);
 });
 
-// test("Cambiar el estado de una luz que estaba apagada",()=>{
-//     var letrero = new Letrero();
-//     letrero.cambiar([0,0],[0,0]);
-//     expect(letrero.luces[0][0].prendida).toBe(true);
-// });
-
-// test("Cambiar el estado de una luz que estaba prendida",()=>{
-//     letrero.encender([0,0],[0,0]);
-//     letrero.cambiar([0,0],[0,0]);
-//     expect(letrero.luces[0][0].prendida).toBe(false);
-// });
-
-// test("Cambiar el estado de un cuadrado con luces prendidas y apagadas",()=>{
-//     letrero.encender([0,0],[0,1]);
-//     letrero.cambiar([0,0],[1,1]);
-//     resultado =[letrero.luces[0][0].prendida,letrero.luces[0][1].prendida,letrero.luces[1][0].prendida,letrero.luces[1][1].prendida];
-//     expect(resultado).toEqual([false,false,true,true]);
-// });
-
 test("Validar cuadrado",()=>{
-    expect(()=>{letrero.validarCuadrado([1,1],[0,0])}).toThrow(new Error("Cuadrado invalido"));
+    expect(()=>{validarCuadrado([1,1],[0,0])}).toThrow(new Error("Cuadrado invalido"));
 });
 
 test("Validar cuadrado valido",()=>{
-    expect(()=>{letrero.validarCuadrado([0,0],[1,1])}).not.toThrow(new Error("Cuadrado invalido"));
+    expect(()=>{validarCuadrado([0,0],[1,1])}).not.toThrow(new Error("Cuadrado invalido"));
 });
